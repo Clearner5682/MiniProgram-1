@@ -1,0 +1,25 @@
+.container{
+  height:80rpx;
+  line-height: 80rpx;
+  display:flex;
+  background-color:orange;
+  text-align: center;
+  margin:6rpx;
+}
+
+.left{
+  flex:1;
+  border-left:4rpx solid red;
+}
+
+.center{
+  flex:2;
+  border-left:4rpx solid red;
+  border-right:4rpx solid red;
+  display:flex;
+}
+
+.right{
+  flex:1;
+  border-right:4rpx solid red;
+}

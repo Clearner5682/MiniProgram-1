@@ -1,0 +1,5 @@
+<view class="container">
+<view class="title">我是cpn-counter</view>
+<text>计数：{{counter}}</text>
+<button bind:tap="increase" size="mini" style="margin-left:20rpx;">+</button>
+</view>

@@ -1,0 +1,33 @@
+<!--1.使用内联样式-->
+<text style="color:{{titleColor}};font-size:{{fontSize}}px;">pages/category/category.wxml</text>
+
+<!--2.使用页内样式-->
+<view class="box">哈哈哈</view>
+
+<!--3.使用全局样式-->
+<view class="container">呵呵呵</view>
+
+<!--4.使用@import导入样式-->
+<!--使用px为尺寸单位时，设备改变时，view的尺寸不会变-->
+<view class="box1">
+<button size="mini">确定</button>
+</view>
+
+<!--使用rpx为尺寸单位时，设备改变时，view的尺寸会改变-->
+<view class="box2">
+<button size="mini">取消</button>
+</view>
+
+<!--5.常见的几种事件类型、事件参数的传递-->
+<!--bind:不会阻止事件的传递，事件的处理会一层层的执行-->
+<!--catch:会阻止事件的传递，遇到catch:的事件处理会执行完当前，阻止事件的继续冒泡和捕获-->
+<view id="myView" style="background-color:red;width:300rpx;height:300rpx;text-align:center;line-height:300rpx;"
+bind:touchstart="touchstartHandler"
+bind:touchmove="touchmoveHandler"
+bind:touchend="touchendHandler"
+bind:tap="tapHandler"
+bind:longpress="longpressHandler"
+data-name="我的小程序"
+data-index="100">
+测试事件
+</view>

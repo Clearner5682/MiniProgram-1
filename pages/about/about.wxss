@@ -1,0 +1,17 @@
+@import "/styles/button.wxss";
+
+.title{
+  color:red;
+}
+
+.red{
+  color:red;
+}
+
+.green{
+  color:green;
+}
+
+.blue{
+  color: blue;
+}

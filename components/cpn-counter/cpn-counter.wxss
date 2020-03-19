@@ -1,0 +1,8 @@
+.container{
+  border: 2rpx solid greenyellow;
+}
+
+.title{
+  font-size:50rpx;
+  font-weight: bold;
+}

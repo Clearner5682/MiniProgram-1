@@ -1,0 +1,9 @@
+@import './styles/weui-searchbar.wxss';
+
+.timegreen{
+  color: greenyellow;
+}
+
+.timebold{
+  font-weight: bold;
+}

@@ -1,0 +1,85 @@
+<text style="color:{{titleColor}};">pages/home/home.wxml</text>
+<button id="btnOK" size="mini" bindtap="btnOKTapHandler">变色</button>
+<!--搜索框-->
+<view class="page__bd">
+		<view class="weui-search-bar {{inputShowed ? 'weui-search-bar_focusing' : ''}}" id="searchBar">
+			<form class="weui-search-bar__form">
+				<view class="weui-search-bar__box">
+					<i class="weui-icon-search"></i>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <span class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput"></span>
+				</view>
+				<label class="weui-search-bar__label" bindtap="showInput">
+					<i class="weui-icon-search"></i>
+                    <span class="weui-search-bar__text">搜索</span>
+				</label>
+			</form>
+            <view class="weui-search-bar__cancel-btn" bindtap="hideInput">取消</view>
+		</view>
+		<view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+			<view class="weui-cell weui-cell_active weui-cell_access">
+				<view class="weui-cell__bd weui-cell_primary">
+					<view>实时搜索文本</view>
+				</view>
+			</view>
+			<view class="weui-cell weui-cell_active weui-cell_access">
+				<view class="weui-cell__bd weui-cell_primary">
+					<view>实时搜索文本</view>
+				</view>
+			</view>
+			<view class="weui-cell weui-cell_active weui-cell_access">
+				<view class="weui-cell__bd weui-cell_primary">
+					<view>实时搜索文本</view>
+				</view>
+			</view>
+			<view class="weui-cell weui-cell_active weui-cell_access">
+				<view class="weui-cell__bd weui-cell_primary">
+					<view>实时搜索文本</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+
+<!--Mustache语法的几种写法-->
+<view>{{firstName}} {{lastName}}</view>
+<view>{{firstName+" "+lastName}}</view>
+<view>{{age>=18?"成年人":"未成年人"}}</view>
+<view class="timegreen {{isTimeBold?'timebold':''}}">{{nowTime}}</view>
+
+
+<!--条件判断wx:if、wx:elif、wx:else-->
+<!-- <view>-------------条件判断---------------</view> -->
+<view wx:if="{{score>=90}}">优秀</view>
+<view wx:elif="{{score>=80}}">良好</view>
+<view wx:elif="{{score>=60}}">及格</view>
+<view wx:else>不及格</view>
+
+
+<!--是否显示wx:if和hidden-->
+<view wx:if="{{false}}">由wx:if控制是否显示</view>
+<view hidden>由hidden控制是否显示</view>
+
+
+<!-- <view>----列表渲染wx:for遍历数组、字符串、数字----</view> -->
+<!--<view wx:for="{{['C语言程序设计','C++','Javascript','Python','C#']}}">{{index}}-{{item}}</view>
+<view wx:for="coderwhy">{{index}}-{{item}}</view>
+<view wx:for="{{10}}">{{index}}-{{item}}</view> -->
+<!--指定wx:key可以提升wx:for的性能-->
+<!-- <view wx:for="{{movies}}" wx:key="id">{{index}}-{{item.id}}-{{item.name}}</view> -->
+<!--二维数组的遍历-->
+<!--block标签的使用，block标签用于将多个元素放到一块，但是并不会在dom中体现-->
+<!-- <block wx:for="{{albums}}">
+<block wx:for="{{item}}">
+<view>ID:{{item.id}}</view>
+<view>歌曲名：{{item.name}}</view>
+<view>价格：{{item.price}}</view>
+</block>
+</block> -->
+
+
+<!-- <view>template的使用，不能递归引用</view>
+<view>include直接引用wxml，可以递归引用，但是不能填充数据</view>
+<import src="../../templates/abc.wxml" />
+<template is="abc" data="{{firstName:firstName,lastName:lastName,age:age}}"/>
+<include src="../../templates/navicator.wxml"/> -->

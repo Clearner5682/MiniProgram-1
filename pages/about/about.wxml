@@ -1,0 +1,30 @@
+<text class="title">AboutPage</text>
+<button size="mini" style="font-weight:normal;border-radius:20rpx;">按钮</button>
+<!--1.组件的基本使用-->
+<!--2.组件和页面的样式影响：isolated、apply-shared、shared-->
+<!--3.页面向组件传值，使用properties-->
+<!--4.页面向组件传递样式，使用externalclasses-->
+<my-cpn title="{{title}}" content="{{content}}" titleclass="red" contentclass="red"/>
+<my-cpn title="我是标题2" content="我是内容2" titleclass="green" contentclass="green"/>
+<my-cpn title="我是标题3" content="我是内容3" titleclass="blue" contentclass="blue"/>
+<!--5.组件向页面传值，使用自定义事件,triggerEvent触发一个事件，页面就可以绑定该事件的处理方法了 -->
+<view>----组件向页面传值，使用自定义事件----</view>
+<cpn-counter id="cpn-counter" bind:getCounter="getCounter"/>
+<view style="margin-top:20rpx;margin-bottom:10rpx;">
+<button size="mini" bind:tap="updateCounter">从页面修改cpn数据</button>
+<button size="mini" bind:tap="getCurrentPage" style="margin-left:20rpx;">获取页面对象</button>
+</view>
+<view>------------------组件练习------------------</view>
+<cpn-tab tabItems="{{tabItems}}" bind:getActiveIndex="getActiveIndex"/>
+<view>------------------插槽练习------------------</view>
+<cpn-slot>
+<text>插槽插入了text</text>
+</cpn-slot>
+<cpn-slot>
+<button size="mini">插槽插入了button</button>
+</cpn-slot>
+<!--多个插槽的使用-->
+<cpn-multi-slot>
+<text slot="slot1">我是text</text>
+<button size="mini" slot="slot2">我是按钮</button>
+</cpn-multi-slot>

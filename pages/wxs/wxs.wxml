@@ -1,0 +1,24 @@
+<!--pages/wxs/wxs.wxml-->
+<text>pages/wxs/wxs.wxml</text>
+
+<!--1.在wxml页面内直接写wxs脚本-->
+<!-- <wxs module="info">
+var message="hello world";
+var name="coderwhy";
+var sum=function(num1,num2){
+  return num1+num2;
+}
+
+module.exports={
+  message:message,
+  name:name,
+  sum:sum
+}
+</wxs> -->
+
+<!--2.使用wxs引入外部的wxs脚本-->
+<wxs src="../../wxs/info.wxs" module="info" />
+
+<view>{{info.message}}</view>
+<view>{{info.name}}</view>
+<view>{{info.sum(20,10)}}</view>

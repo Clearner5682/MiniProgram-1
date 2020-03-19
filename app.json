@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/about/about",
+    "pages/category/category",
+    "pages/wxs/wxs",
+    "pages/home/home"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "My MiniProgram",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,27 @@
+.tabContainer{
+  display: flex;
+  /* border:2rpx solid red; */
+  height: 80rpx;
+}
+
+.tabItemContainer{
+  flex: 1;
+  /* line-height: 80rpx; */
+  vertical-align: middle;
+}
+
+.tabItem{
+  text-align: center;
+  width:50%;
+  margin-left:25%;
+  height: 60rpx;
+  margin-top: 8rpx;
+  line-height: 60rpx;
+  font-size: 40rpx;
+  /* border: 2rpx solid red; */
+}
+
+.active{
+  color:rgb(235, 91, 115);
+  border-bottom: 4rpx solid rgb(235, 91, 115);
+}

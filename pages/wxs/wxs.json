@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#e5e500",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "wxs Test",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true
+}

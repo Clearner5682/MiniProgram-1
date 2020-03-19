@@ -1,0 +1,8 @@
+<template name="abc">
+<view>
+姓名：{{firstName+' '+lastName}}
+</view>
+<view>
+年龄：{{age}}
+</view>
+</template>

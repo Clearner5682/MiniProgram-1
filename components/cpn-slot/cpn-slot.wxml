@@ -1,0 +1,7 @@
+<view class="container">
+<view class="left">我是左边</view>
+<view class="center">
+<slot></slot>
+</view>
+<view class="right">我是右边</view>
+</view>

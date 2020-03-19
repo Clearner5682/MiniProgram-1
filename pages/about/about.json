@@ -1,0 +1,15 @@
+{
+  "navigationBarBackgroundColor": "#ee55ee",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "AboutPage",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "my-cpn": "/components/my-cpn/my-cpn",
+    "cpn-counter":"/components/cpn-counter/cpn-counter",
+    "cpn-tab":"/components/cpn-tab/cpn-tab",
+    "cpn-slot":"/components/cpn-slot/cpn-slot",
+    "cpn-multi-slot":"/components/cpn-multi-slot/cpn-multi-slot"
+  }
+}
