@@ -106,5 +106,32 @@ Page({
         nowTime: new Date().toLocaleString()
       });
     }, 1000);
+  },
+  onReady(){
+    // 1.发送GET请求，即使返回的状态码为404也会执行success回调函数。。。
+    wx.request({
+      url: 'http://localhost:5000/api/Student/Get?id=1',
+      method:"GET",
+      success:res=>{
+        console.log("请求学生信息成功：",res);
+      },
+      complete:res=>{ 
+        console.log("请求学生信息完成：",res);
+      }
+    });
+    // 2.发送POST请求
+    wx.request({
+      url: 'http://localhost:5000/api/Student/Add',
+      method:"POST",
+      data:{
+        Id:1001,
+        FirstName:"li",
+        LastName:"qian",
+        Birthday:"1990-10-26"
+      },
+      success:res=>{
+        console.log("添加学生信息成功：", res);
+      }
+    })
   }
 })

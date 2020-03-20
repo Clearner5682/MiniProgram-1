@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/about/about",
     "pages/category/category",
-    "pages/wxs/wxs",
-    "pages/home/home"
+    "pages/wxs/wxs"
   ],
   "window": {
     "backgroundTextStyle": "light",
