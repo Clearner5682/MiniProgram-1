@@ -1,3 +1,6 @@
+const network = require("../../utils/network.js");
+const util=require("../../utils/util.js");
+
 Page({
   data: {
     titleColor: 'black',
@@ -107,31 +110,40 @@ Page({
       });
     }, 1000);
   },
-  onReady(){
+  onReady() {
     // 1.发送GET请求，即使返回的状态码为404也会执行success回调函数。。。
     wx.request({
       url: 'http://localhost:5000/api/Student/Get?id=1',
-      method:"GET",
-      success:res=>{
-        console.log("请求学生信息成功：",res);
+      method: "GET",
+      success: res => {
+        console.log("请求学生信息成功：", res);
       },
-      complete:res=>{ 
-        console.log("请求学生信息完成：",res);
+      complete: res => {
+        console.log("请求学生信息完成：", res);
       }
     });
     // 2.发送POST请求
     wx.request({
       url: 'http://localhost:5000/api/Student/Add',
-      method:"POST",
-      data:{
-        Id:1001,
-        FirstName:"li",
-        LastName:"qian",
-        Birthday:"1990-10-26"
+      method: "POST",
+      data: {
+        Id: 1001,
+        FirstName: "li",
+        LastName: "qian",
+        Birthday: "1990-10-26"
       },
-      success:res=>{
+      success: res => {
         console.log("添加学生信息成功：", res);
       }
     })
+    const test=util.formatTime(new Date());
+    console.log(test);
+    // 3.使用封装的网络请求函数发送请求
+    network.request({
+        url: "http://localhost:5000/api/Student/GetAll",
+        method:"GET"
+      })
+      .then(res => {console.log('promise请求成功：',res)})
+      .catch(res => {console.log('promise请求失败：',res)});
   }
 })
