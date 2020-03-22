@@ -110,7 +110,7 @@ Page({
       });
     }, 1000);
   },
-  onReady() {
+  onPullDownRefresh() {
     // 1.发送GET请求，即使返回的状态码为404也会执行success回调函数。。。
     wx.request({
       url: 'http://localhost:5000/api/Student/Get?id=1',
@@ -145,5 +145,55 @@ Page({
       })
       .then(res => {console.log('promise请求成功：',res)})
       .catch(res => {console.log('promise请求失败：',res)});
+  },
+  onShareAppMessage(){
+    return {
+      title:"MiniProgram-1",
+      path:"/pages/home/home",
+      imageUrl:"http://pic231.nipic.com/file/20190730/9773031_122447735081_2.jpg"
+    }
+  },
+  showToast(){
+    wx.showToast({
+      title: '你好啊，李银河',
+      icon:'success',
+      // image:'/assets/image/icon.png'
+      duration:3000,
+      mask:true,
+      success:()=>{console.log('showToast成功')},
+      fail: () => { console.log('showToast失败')},
+      complete: () => { console.log('showToast完成')}
+    })
+  },
+  showModal(){
+    wx.showModal({
+      title: '提示',
+      content: '确定删除该条记录吗？',
+      success:res=>{
+        console.log('showModal成功',res);
+      }
+    })
+  },
+  showLoading(){
+    wx.showLoading({
+      title:'正在处理中...',
+      mask:true,
+      success:()=>{
+        console.log('showLoading成功');
+      }
+    });
+    // showLoading只能手动关闭，一般是请求完成之后去执行hideLoading()
+    setTimeout(()=>{
+      wx.hideLoading();
+    },2000);
+  },
+  showActionSheet(){
+    wx.showActionSheet({
+      itemList: ['拍照','从相册选择'],
+      itemColor:'red',
+      success:res=>{
+        console.log('您选择了：',res);
+      }
+    })
   }
 })

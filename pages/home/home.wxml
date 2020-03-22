@@ -83,3 +83,12 @@
 <import src="../../templates/abc.wxml" />
 <template is="abc" data="{{firstName:firstName,lastName:lastName,age:age}}"/>
 <include src="../../templates/navicator.wxml"/> -->
+
+
+<!--弹窗-->
+<button size="mini" bind:tap="showToast">showToast</button>
+<button size="mini" bind:tap="showModal">showModal</button>
+<button size="mini" bind:tap="showLoading">showLoading</button>
+<button size="mini" bind:tap="showActionSheet">showActionSheet</button>
+<!--分享小程序-->
+<button size="mini" open-type="share">分享</button>
