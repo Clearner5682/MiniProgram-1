@@ -1,17 +1,32 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
     // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    var token = wx.getStorageSync("token");
+    if (!token) {// 本地没有token，掉登录接口
+      wx.login({
+        success: res => {
+          const code = res.code;
+          wx.request({
+            url: 'http://localhost:5000/api/Auth/LoginWX?code=' + code,
+            method: "POST",
+            success: loginRes => {
+              wx.setStorageSync("token",loginRes.data.token);
+            },
+            fail: loginRes => {
+              console.log(loginRes);
+            }
+          })
+        }
+      })
+    }else{// 校验token的有效性？
+
+    }
     // 获取用户信息
     wx.getSetting({
       success: res => {

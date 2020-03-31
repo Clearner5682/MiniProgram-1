@@ -1,5 +1,5 @@
 const network = require("../../utils/network.js");
-const util=require("../../utils/util.js");
+const util = require("../../utils/util.js");
 
 Page({
   data: {
@@ -13,18 +13,21 @@ Page({
     isTimeBold: true,
     score: 98,
     movies: [{
-      id: "1",
-      name: "海王"
-    }, {
-      id: "2",
-      name: "海贼王"
-    }, {
-      id: "3",
-      name: "火影忍者"
-    }, {
-      id: "4",
-      name: "海尔兄弟"
-    }],
+        id: "1",
+        name: "海王"
+      },
+      {
+        id: "2",
+        name: "海贼王"
+      },
+      {
+        id: "3",
+        name: "火影忍者"
+      }, {
+        id: "4",
+        name: "海尔兄弟"
+      }
+    ],
     albums: [
       [{
         id: "1001",
@@ -136,63 +139,73 @@ Page({
         console.log("添加学生信息成功：", res);
       }
     })
-    const test=util.formatTime(new Date());
+    const test = util.formatTime(new Date());
     console.log(test);
     // 3.使用封装的网络请求函数发送请求
     network.request({
         url: "http://localhost:5000/api/Student/GetAll",
-        method:"GET"
+        method: "GET"
       })
-      .then(res => {console.log('promise请求成功：',res)})
-      .catch(res => {console.log('promise请求失败：',res)});
+      .then(res => {
+        console.log('promise请求成功：', res)
+      })
+      .catch(res => {
+        console.log('promise请求失败：', res)
+      });
   },
-  onShareAppMessage(){
+  onShareAppMessage() {
     return {
-      title:"MiniProgram-1",
-      path:"/pages/home/home",
-      imageUrl:"http://pic231.nipic.com/file/20190730/9773031_122447735081_2.jpg"
+      title: "MiniProgram-1",
+      path: "/pages/home/home",
+      imageUrl: "http://pic231.nipic.com/file/20190730/9773031_122447735081_2.jpg"
     }
   },
-  showToast(){
+  showToast() {
     wx.showToast({
       title: '你好啊，李银河',
-      icon:'success',
+      icon: 'success',
       // image:'/assets/image/icon.png'
-      duration:3000,
-      mask:true,
-      success:()=>{console.log('showToast成功')},
-      fail: () => { console.log('showToast失败')},
-      complete: () => { console.log('showToast完成')}
-    })
-  },
-  showModal(){
-    wx.showModal({
-      title: '提示',
-      content: '确定删除该条记录吗？',
-      success:res=>{
-        console.log('showModal成功',res);
+      duration: 3000,
+      mask: true,
+      success: () => {
+        console.log('showToast成功')
+      },
+      fail: () => {
+        console.log('showToast失败')
+      },
+      complete: () => {
+        console.log('showToast完成')
       }
     })
   },
-  showLoading(){
+  showModal() {
+    wx.showModal({
+      title: '提示',
+      content: '确定删除该条记录吗？',
+      success: res => {
+        console.log('showModal成功', res);
+      }
+    })
+  },
+  showLoading() {
     wx.showLoading({
-      title:'正在处理中...',
-      mask:true,
-      success:()=>{
+      title: '正在处理中...',
+      mask: true,
+      success: () => {
         console.log('showLoading成功');
       }
     });
     // showLoading只能手动关闭，一般是请求完成之后去执行hideLoading()
-    setTimeout(()=>{
+    setTimeout(() => {
       wx.hideLoading();
-    },2000);
+    }, 2000);
   },
-  showActionSheet(){
+  showActionSheet() {
     wx.showActionSheet({
-      itemList: ['拍照','从相册选择'],
-      itemColor:'red',
-      success:res=>{
-        console.log('您选择了：',res);
+      itemList: ['拍照', '从相册选择'],
+      itemColor: 'red',
+      success: res => {
+        console.log('您选择了：', res);
       }
     })
   }
