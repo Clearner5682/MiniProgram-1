@@ -92,3 +92,11 @@
 <button size="mini" bind:tap="showActionSheet">showActionSheet</button>
 <!--分享小程序-->
 <button size="mini" open-type="share">分享</button>
+
+<!--页面跳转的几种方式-->
+<!-- 1、默认的跳转方式是navigate，可以通过queryString传递数据，跳转到目标页面之后微信会自动加上返回的功能 -->
+<navigator url="/pages/detail/detail?firstName={{firstName}}&lastName={{lastName}}" open-type="navigate">跳转到详情(navigate)</navigator>
+<!-- 2、redirect，重定向到目标页面，没有返回功能，只能自己做跳转，微信会自动加上返回首页的功能 -->
+<navigator url="/pages/detail/detail" open-type="redirect">跳转到详情(redirect)</navigator>
+<!-- 3、跳转到tabBar中的页面 -->
+<navigator url="/pages/about/about" open-type="switchTab">跳转到关于页(switchTab)</navigator>

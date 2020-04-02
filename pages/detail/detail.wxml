@@ -1,0 +1,7 @@
+<!--pages/detail/detail.wxml-->
+<text>pages/detail/detail.wxml</text>
+<!-- 如果是navigate跳转过来的才可以使用返回navigateBack功能 -->
+<navigator open-type="navigateBack" delta="2">返回</navigator>
+<!-- 不能跳转到tabBar对应的页面 -->
+<navigator url="/pages/comment/comment">跳转到评论页</navigator>
+
